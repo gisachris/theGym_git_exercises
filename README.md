@@ -94,27 +94,30 @@ user# git push -u origin main
     branch 'main' set up to track 'origin/main'.
 ```
 7. Create a new branch `dev`
-8. From `dev` create another branch `test`
-9. Go back to the `dev` branch and delete the `test` branch
 ```
 user# git checkout -b dev
 
 > Switched to a new branch 'dev'
 
 user# git branch
-> * dev
-    main
 
+>   * dev
+    main
+```
+8. From `dev` create another branch `test`
+```
 user# git checkout -b test
 
 > Switched to a new branch 'test'
 
 user# git branch
 
->  dev
-   main
-   * test
-
+>   dev
+    main
+    * test
+```
+9. Go back to the `dev` branch and delete the `test` branch
+```
 user# git checkout dev
 
 > Switched to branch 'dev'
@@ -125,6 +128,6 @@ user# git branch -d test
 
 user# git branch
 
->  * dev
+>    * dev
      main
 ```
