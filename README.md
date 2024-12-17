@@ -230,3 +230,54 @@ user#   git stash pop stash@{1}     //restore the stash with index in the {id}
 >       nothing added to commit but untracked files present (use "git add" to track)
 >       Dropped stash@{1} (bd011daf7ca8a11e9790d723ebac0e354fcc8903)
 ```
+6. With the help of an `index` use `stash pop` bring back the `home.html` page changes
+```
+user#   git stash list
+
+>       stash@{0}: On dev: third_stash
+>       stash@{1}: On dev: second_stash
+>       stash@{2}: On dev: first_stash
+
+user#   git stash pop stash@{2}
+```
+7. Commit the current changes and push them
+```
+user#   git add .
+
+user#   git commit -m "restore home and about pages"
+
+>       [dev 26188b7] restore home and about pages
+>        2 files changed, 12 insertions(+)
+>        create mode 100644 about.html
+>        create mode 100644 index.html
+
+user#   git push -u origin dev
+
+>        Enumerating objects: 5, done.
+>        Counting objects: 100% (5/5), done.
+>        Delta compression using up to 8 threads
+>        Compressing objects: 100% (4/4), done.
+>        Writing objects: 100% (4/4), 471 bytes | 471.00 KiB/s, done.
+>        Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+>        To github.com:gisachris/git_project_one.git
+>           a512875..26188b7  dev -> dev
+>        branch 'dev' set up to track 'origin/dev'.
+```
+
+8. Using stash pop restore the changes of the `team.html` page index.
+```
+user#   git stash list
+
+>       stash@{0}: On dev: third_stash
+>       stash@{1}: On dev: second_stash
+>       stash@{2}: On dev: first_stash
+
+user#   git stash pop stash@{0}
+```
+
+9. Reset the current changes using `git reset` and go back to the changes without the `team.html` page.
+```
+user#   git reset --hard HEAD~1
+```
+
+
