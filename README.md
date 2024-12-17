@@ -144,4 +144,89 @@ user# git branch
 6. With the help of an index use stash pop bring back the `home.html` page changes
 7. Commit the current changes and push them
 8. Using stash pop restore the changes of the `team.html` page index
-9. Reset the current changes using git reset and go back to the changes without the `team.html` page
+9. Reset the current changes using git reset and go back to the changes without the `team.html` page.
+
+> Below are the solution steps
+1. Create a new `home.html` file, add some html changes and save them.
+```
+user#   touch index.html
+
+user#   ls
+
+>       index.html
+
+user#   nano index.html     //make changes to the file
+
+user#   cat index.html      //preview the file
+
+ >      <html>
+ >      <head><head>
+ >      <body>
+ >          <p>This is some text</p>
+ >      </body>
+ >      </html>
+```
+
+2. Stash save your current changes
+```
+user#   git stash push -m "first_stash"
+
+>       Saved working directory and index state On dev: first_stash
+```
+3. Repeat the same process for a new `about.html` page and stash save your changes
+4. Repeat the same process for a new `team.html` page and stash save your changes
+```
+user#   touch about.html
+
+user#   nano about.html         //make changes to the about page
+
+user#   cat about.html          //preview the about page
+
+ >      <html>
+ >      <head><head>
+ >      <body>
+ >          <p>This is the about Page </p>
+ >      </body>
+ >      </html>
+
+user#   git stash push -u -m "second_stash"
+
+>       Saved working directory and index state On dev: second_stash
+
+user#   touch team.html
+
+user#   nano team.html          //make changes to the team page
+
+user#   cat team.html          //preview the team page
+
+ >      <html>
+ >      <head><head>
+ >      <body>
+ >          <p>This is the Team Page </p>
+ >      </body>
+ >      </html>
+
+user#   git stash push -u -m "third_stash"
+
+>       Saved working directory and index state On dev: third_stash
+```
+5. Using stash pop restore the changes of the `about.html` page
+```
+user#   git stash list         // list all the stashes
+
+>       stash@{0}: On dev: third_stash
+>       stash@{1}: On dev: second_stash
+>       stash@{2}: On dev: first_stash
+
+user#   git stash pop stash@{1}     //restore the stash with index in the {id}
+
+>       Already up to date.
+>       On branch dev
+>       Your branch is up to date with 'origin/dev'.
+>       Untracked files:
+>         (use "git add <file>..." to include in what will be committed)
+>       	about.html
+>       	index.html
+>       nothing added to commit but untracked files present (use "git add" to track)
+>       Dropped stash@{1} (bd011daf7ca8a11e9790d723ebac0e354fcc8903)
+```
