@@ -17,7 +17,7 @@
 `>`: This will represent the Output of a given Command.
 
 ## Bundle One
-### Exercise One()
+### Exercise One
 > Below are the exercise Question criteria
 1. Create a project folder & initialize git
 2. Make changes to the project (add files and contents)
@@ -131,3 +131,17 @@ user# git branch
 >    * dev
      main
 ```
+<br>
+<br>
+
+---
+### Exercise Two
+1. Create a new `home.html` file, add some html changes and save them
+2. Stash save your current changes
+3. Repeat the same process for a new `about.html` page and stash save your changes
+4. Repeat the same process for a new `team.html` page and stash save your changes
+5. Using stash pop restore the changes of the `about.html` page
+6. With the help of an index use stash pop bring back the `home.html` page changes
+7. Commit the current changes and push them
+8. Using stash pop restore the changes of the `team.html` page index
+9. Reset the current changes using git reset and go back to the changes without the `team.html` page
