@@ -345,7 +345,17 @@ user#   git push -u origin ft/bundle-2
 ---
 ### Exercise Two
 > Below are the exercise Question criteria
-
+1. Checkout your `main` branch and pull the latest changes
+2. Create a new branch named `ft/service-redesign`
+3. Add new changes to the `service.html` page
+4. commit and push them
+5. create a new PR for your changes
+6. go back to your `main` branch and add again new changes to your `service.html` page, you can add different changes but make sure to affect the same part(line of code) as you did in the other PR
+7. Commit and push those changes
+8. Now go back to the Github PR you had created for the `ft/service-redesign`branch, you will then see that you have conflicts with the `main` branch
+9. In your project checkout the `ft/service-redesign`branch
+10. Compare the `ft/service-redesign`with the `main` branch using git diff and observe the changes
+11. Using git merge, merge the `main` branch with `ft/service-redesign` branch and commit and push you changes again
 <br>
 
 ---
