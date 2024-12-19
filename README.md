@@ -517,6 +517,73 @@ user#     git push -u origin ft/contact-page
 >         branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
 ```
 
+11. Create a new PR for the contact page
+<br>
+<img src='./images/bundle_three_exercise_one_two.png' width='500'>
+<br>
+12. From the `ft/contact-page` branch create a new branch called `ft/faq-page`
+13. Create a new `faq.html` page and add some changes there
+```
+user#     git checkout -b ft/faq-page
+
+>         Switched to a new branch 'ft/faq-page'
+
+user#     touch faq.html
+
+user#     nano faq.html
+
+user#     cat faq.html
+
+>         <html>
+>          <body>
+>           <p>this is thew faq page</p>
+>          </body>
+>         </html>
+```
+14. Commit and push those changes
+```
+user#     git add faq.html
+
+user#     git commit -m "implement changes on the faq page"
+
+>         [ft/faq-page 07b64be] implement changes on the faq page
+>          1 file changed, 5 insertions(+)
+>          create mode 100644 faq.html
+
+user#     git push -u origin ft/faq-page
+
+>         Enumerating objects: 4, done.
+>         Counting objects: 100% (4/4), done.
+>         Delta compression using up to 8 threads
+>         Compressing objects: 100% (3/3), done.
+>         Writing objects: 100% (3/3), 349 bytes | 349.00 KiB/s, done.
+>         Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>         remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>         remote: 
+>         remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+>         remote:      https://github.com/gisachris/git_project_one/pull/new/ft/faq-page
+>         remote: 
+>         To github.com:gisachris/git_project_one.git
+>          * [new branch]      ft/faq-page -> ft/faq-page
+>         branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+```
+15. Using git revert, revert the changes of the last commit of the `ft/team-page` branch. (use the commit hash you copied earlier)
+```
+user#     git checkout ft/team-page
+
+>         Switched to branch 'ft/team-page'
+>         Your branch is up to date with 'origin/ft/team-page'.
+
+user#     git revert 1884b87
+
+>         [ft/team-page a3aa14b] Revert "enter code in team.html file"
+>          1 file changed, 5 deletions(-)
+>          delete mode 100644 team.html    
+```
+16. Push the changes and create a new PR
+<br>
+<img src='./images/bundle_three_exercise_one_three.png' width='500'>
+<br>
 
 <br>
 
