@@ -359,6 +359,74 @@ user#   git push -u origin ft/bundle-2
 9. In your project checkout the `ft/service-redesign`branch
 10. Compare the `ft/service-redesign`with the `main` branch using git diff and observe the changes
 11. Using git merge, merge the `main` branch with `ft/service-redesign` branch and commit and push you changes again
+
+    
+  
+1a. Checkout your `main` branch and pull the latest changes
+```
+user#       git switch main
+
+>           Switched to branch 'main'
+>           Your branch is up to date with 'origin/main'.
+
+user#       git pull origin main
+
+>           remote: Enumerating objects: 1, done.
+>           remote: Counting objects: 100% (1/1), done.
+>           remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+>           Unpacking objects: 100% (1/1), 913 bytes | 304.00 KiB/s, done.
+>           From github.com:gisachris/git_project_one
+>            * branch            main       -> FETCH_HEAD
+>              a512875..99eab8c  main       -> origin/main
+>           Updating a512875..99eab8c
+>           Fast-forward
+>            about.html    | 6 ++++++
+>            index.html    | 6 ++++++
+>            services.html | 5 +++++
+>            3 files changed, 17 insertions(+)
+>            create mode 100644 about.html
+>            create mode 100644 index.html
+>            create mode 100644 services.html
+```
+2. Create a new branch named `ft/service-redesign`
+3. Add new changes to the `service.html` page
+```
+user#        git checkout -b ft/service-redesign
+
+>            Switched to a new branch 'ft/service-redesign'
+
+>            nano services.html            //make changes to the services.html page
+```
+4. commit and push them
+```
+user#        git add .
+
+user#        git commit -m "make changes to the services page"
+
+>            [ft/service-redesign 0b13082] make changes to the services page
+>              1 file changed, 1 insertion(+)
+
+user#        git push -u origin ft/service-redesign
+
+>            Enumerating objects: 5, done.
+>            Counting objects: 100% (5/5), done.
+>            Delta compression using up to 8 threads
+>            Compressing objects: 100% (3/3), done.
+>            Writing objects: 100% (3/3), 360 bytes | 360.00 KiB/s, done.
+>            Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>            remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>            remote: 
+>            remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+>            remote:      https://github.com/gisachris/git_project_one/pull/new/ft/service-redesign
+>            remote: 
+>            To github.com:gisachris/git_project_one.git
+>            * [new branch]      ft/service-redesign -> ft/service-redesign
+>            branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'
+```
+5. create a new PR for your changes
+<br>
+<img src='./images/bundle_two_exercise_two.png' width='500'>
+<br>
 <br>
 
 ---
