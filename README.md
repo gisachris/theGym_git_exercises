@@ -341,7 +341,7 @@ user#   git push -u origin ft/bundle-2
 ```
 4. Request a review and make sure your Pull request gets merged (Look for someone to merge your PR)
 
-<img src='./images/bundle_two_exercise_one.png'>
+<img src='./images/bundle_two_exercise_one.png' width='500'>
 
 <br>
 
@@ -382,6 +382,68 @@ user#   git push -u origin ft/bundle-2
 14. Commit and push those changes
 15. Using git revert, revert the changes of the last commit of the `ft/team-page` branch. (use the commit hash you copied earlier)
 16. Push the changes and create a new PR
+<br>
+<br>
+
+1A. Create a new branch named `ft/team-page`
+```
+user#   git checkout -b ft/team-page
+
+>       Switched to a new branch 'ft/team-page'
+```
+2. Create a new html page named `team.html` and add some changes
+```
+user#   touch team.html
+
+user#   nano team.html         //add changes  to the team.html file
+
+user#   cat team.html         //preview the team.html file
+
+>       <html>
+>        <body>
+>         <p>This is the team page</p>
+>        </body>
+>       </html>
+```
+3. commit and push those changes
+```
+user#   git add .
+
+user#   git commit -m "enter code in team.html file"
+
+>       [ft/team-page 1884b87] enter code in team.html file
+>        1 file changed, 5 insertions(+)
+>        create mode 100644 team.html
+
+user#     git push -u origin ft/team-page
+
+>         Enumerating objects: 4, done.
+>         Counting objects: 100% (4/4), done.
+>         Delta compression using up to 8 threads
+>         Compressing objects: 100% (3/3), done.
+>         Writing objects: 100% (3/3), 350 bytes | 350.00 KiB/s, done.
+>         Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>         remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>         remote: 
+>         remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+>         remote:      https://github.com/gisachris/git_project_one/pull/new/ft/team-page
+>         remote: 
+>         To github.com:gisachris/git_project_one.git
+>          * [new branch]      ft/team-page -> ft/team-page
+>         branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+```
+4. Create a new PR for the changes
+<br>
+<img src='./images/bundle_three_exercise_one.png' width='500'>
+<br>
+5. Go back to `main` branch (checkout the `main` branch)
+```
+user#     git checkout main
+
+>         Switched to branch 'main'
+>         Your branch is up to date with 'origin/main'.
+```
+
 
 <br>
 
