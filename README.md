@@ -11,6 +11,9 @@
 - [Bundle Two](#bundle-two)
   - [Exercise One](#exercise-one)
   - [Exercise Two](#exercise-two)
+- [Bundle Three](#bundle-three)
+  - [Exercise One](#exercise-one)
+  - [Exercise Two](#exercise-two)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -303,7 +306,8 @@ user#   git checkout -b ft/bundle-2
 ```
 2. Add new changes to your project. create a new page named `services.html` and add some changes
 ```
-touch services.html
+user#       touch services.html
+
 user#       nano services.html          // make changes to the services.html page
 
 user#       cat services.html           //preview the changes
@@ -338,7 +342,411 @@ user#   git push -u origin ft/bundle-2
 ```
 4. Request a review and make sure your Pull request gets merged (Look for someone to merge your PR)
 
-<img src='./images/bundle_two_exercise_one.png'>
+<img src='./images/bundle_two_exercise_one.png' width='500'>
+
+<br>
+
+---
+### Exercise Two
+> Below are the exercise Question criteria
+1. Checkout your `main` branch and pull the latest changes
+2. Create a new branch named `ft/service-redesign`
+3. Add new changes to the `service.html` page
+4. commit and push them
+5. create a new PR for your changes
+6. go back to your `main` branch and add again new changes to your `service.html` page, you can add different changes but make sure to affect the same part(line of code) as you did in the other PR
+7. Commit and push those changes
+8. Now go back to the Github PR you had created for the `ft/service-redesign`branch, you will then see that you have conflicts with the `main` branch
+9. In your project checkout the `ft/service-redesign`branch
+10. Compare the `ft/service-redesign`with the `main` branch using git diff and observe the changes
+11. Using git merge, merge the `main` branch with `ft/service-redesign` branch and commit and push you changes again
+
+    
+  
+1a. Checkout your `main` branch and pull the latest changes
+```
+user#       git switch main
+
+>           Switched to branch 'main'
+>           Your branch is up to date with 'origin/main'.
+
+user#       git pull origin main
+
+>           remote: Enumerating objects: 1, done.
+>           remote: Counting objects: 100% (1/1), done.
+>           remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+>           Unpacking objects: 100% (1/1), 913 bytes | 304.00 KiB/s, done.
+>           From github.com:gisachris/git_project_one
+>            * branch            main       -> FETCH_HEAD
+>              a512875..99eab8c  main       -> origin/main
+>           Updating a512875..99eab8c
+>           Fast-forward
+>            about.html    | 6 ++++++
+>            index.html    | 6 ++++++
+>            services.html | 5 +++++
+>            3 files changed, 17 insertions(+)
+>            create mode 100644 about.html
+>            create mode 100644 index.html
+>            create mode 100644 services.html
+```
+2. Create a new branch named `ft/service-redesign`
+3. Add new changes to the `service.html` page
+```
+user#        git checkout -b ft/service-redesign
+
+>            Switched to a new branch 'ft/service-redesign'
+
+>            nano services.html            //make changes to the services.html page
+```
+4. commit and push them
+```
+user#        git add .
+
+user#        git commit -m "make changes to the services page"
+
+>            [ft/service-redesign 0b13082] make changes to the services page
+>              1 file changed, 1 insertion(+)
+
+user#        git push -u origin ft/service-redesign
+
+>            Enumerating objects: 5, done.
+>            Counting objects: 100% (5/5), done.
+>            Delta compression using up to 8 threads
+>            Compressing objects: 100% (3/3), done.
+>            Writing objects: 100% (3/3), 360 bytes | 360.00 KiB/s, done.
+>            Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>            remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>            remote: 
+>            remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+>            remote:      https://github.com/gisachris/git_project_one/pull/new/ft/service-redesign
+>            remote: 
+>            To github.com:gisachris/git_project_one.git
+>            * [new branch]      ft/service-redesign -> ft/service-redesign
+>            branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'
+```
+5. create a new PR for your changes
+<br>
+<img src='./images/bundle_two_exercise_two.png' width='500'>
+<br>
+6. go back to your `main` branch and add again new changes to your `service.html` page, you can add different changes but make sure to affect the same part(line of code) as you did in the other PR
+```
+user#       git switch main
+
+user#       nano services.html
+
+user#       cat services.html
+
+>           <html>
+>             <body>
+>               <p>this is the services page</p>
+>               <span>This is a slight change on the same line</span>
+>             </body>
+>           </html>
+
+```
+7. Commit and push those changes
+```
+user#       git add .
+
+user#       git commit -m "chasnged the same line on services.html page"
+
+>           [main e143925] chasnged the same line on services.html page
+>            1 file changed, 1 insertion(+)
+
+user#       git push
+
+>           Enumerating objects: 5, done.
+>           Counting objects: 100% (5/5), done.
+>           Delta compression using up to 8 threads
+>           Compressing objects: 100% (3/3), done.
+>           Writing objects: 100% (3/3), 385 bytes | 385.00 KiB/s, done.
+>           Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>           remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>           To github.com:gisachris/git_project_one.git
+>              99eab8c..e143925  main -> main
+ ```
+8. Now go back to the Github PR you had created for the `ft/service-redesign`branch, you will then see that you have conflicts with the `main` branch
+<br>
+<img src='./images/bundle_two_exercise_two_two.png' width='500'>
+<br>
+9. In your project checkout the `ft/service-redesign`branch
+```
+user#        git checkout ft/service-redesign
+
+>            Switched to branch 'ft/service-redesign'
+>            Your branch is up to date with 'origin/ft/service-redesign'.
+```
+10. Compare the `ft/service-redesign`with the `main` branch using git diff and observe the changes
+```
+user#        git diff main
+
+>            diff --git a/services.html b/services.html
+>            index 36ae9a3..189b85c 100644
+>            --- a/services.html
+>            +++ b/services.html
+>            @@ -1,6 +1,6 @@
+>             <html>
+>               <body>
+>                 <p>this is the services page</p>
+>            -    <span>This is a slight change on the same line</span>
+>            +    <p>This is the redesign of this page</p>
+>               </body>
+>             </html>
+```
+11. Using git merge, merge the `main` branch with `ft/service-redesign` branch and commit and push you changes again
+```
+>             git merge main
+
+>             Auto-merging services.html
+>             CONFLICT (content): Merge conflict in services.html
+>             Automatic merge failed; fix conflicts and then commit the result.
+
+user#         git checkout --ours .                 //this favours changes of the current branch in the conflict
+
+>             Updated 1 path from the index
+
+user#         git add .
+
+user#         git commit -m "fix comflict with services file"
+
+>             [ft/service-redesign c1b6a59] fix comflict with services file
+
+user#         git Push
+
+>             Enumerating objects: 1, done.
+>             Counting objects: 100% (1/1), done.
+>             Writing objects: 100% (1/1), 243 bytes | 243.00 KiB/s, done.
+>             Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+>             To github.com:gisachris/git_project_one.git
+>                0b13082..c1b6a59  ft/service-redesign -> ft/service-redesign
+```
+
+
+<br>
+
+---
+
+## Bundle Three
+### Exercise One
+> Below are the exercise Question criteria
+1. Create a new branch named `ft/team-page`
+2. Create a new html page named `team.html` and add some changes
+3. commit and push those changes
+4. Create a new PR for the changes
+5. Go back to `main` branch (checkout the `main` branch)
+6. Create new branch named `ft/contact-page`
+7. Go back to the `ft/team-page`
+8. With the help of git log look for the last commit and copy its hash
+9. Checkout again `ft/contact-page` using git cherry-pick get the changes from the last commit on the `ft/team-page` branch.
+10. Add new changes for the contact page and commit, push them
+11. Create a new PR for the contact page
+12. From the `ft/contact-page` branch create a new branch called `ft/faq-page`
+13. Create a new `faq.html` page and add some changes there
+14. Commit and push those changes
+15. Using git revert, revert the changes of the last commit of the `ft/team-page` branch. (use the commit hash you copied earlier)
+16. Push the changes and create a new PR
+<br>
+<br>
+
+1A. Create a new branch named `ft/team-page`
+```
+user#   git checkout -b ft/team-page
+
+>       Switched to a new branch 'ft/team-page'
+```
+2. Create a new html page named `team.html` and add some changes
+```
+user#   touch team.html
+
+user#   nano team.html         //add changes  to the team.html file
+
+user#   cat team.html         //preview the team.html file
+
+>       <html>
+>        <body>
+>         <p>This is the team page</p>
+>        </body>
+>       </html>
+```
+3. commit and push those changes
+```
+user#   git add .
+
+user#   git commit -m "enter code in team.html file"
+
+>       [ft/team-page 1884b87] enter code in team.html file
+>        1 file changed, 5 insertions(+)
+>        create mode 100644 team.html
+
+user#     git push -u origin ft/team-page
+
+>         Enumerating objects: 4, done.
+>         Counting objects: 100% (4/4), done.
+>         Delta compression using up to 8 threads
+>         Compressing objects: 100% (3/3), done.
+>         Writing objects: 100% (3/3), 350 bytes | 350.00 KiB/s, done.
+>         Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>         remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>         remote: 
+>         remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+>         remote:      https://github.com/gisachris/git_project_one/pull/new/ft/team-page
+>         remote: 
+>         To github.com:gisachris/git_project_one.git
+>          * [new branch]      ft/team-page -> ft/team-page
+>         branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+```
+4. Create a new PR for the changes
+<br>
+<img src='./images/bundle_three_exercise_one.png' width='500'>
+<br>
+5. Go back to `main` branch (checkout the `main` branch)
+```
+user#     git checkout main
+
+>         Switched to branch 'main'
+>         Your branch is up to date with 'origin/main'.
+```
+6. Create new branch named `ft/contact-page`
+7. Go back to the `ft/team-page`
+```
+user#     git checkout -b ft/contact-page
+
+>         Switched to a new branch 'ft/contact-page'
+
+user#     git switch ft/team-page
+
+>         Switched to branch 'ft/team-page'
+>         Your branch is up to date with 'origin/ft/team-page'.
+```
+8. With the help of git log look for the last commit and copy its hash
+```
+user#     git log --oneline
+
+>         1884b87 (HEAD -> ft/team-page, origin/ft/team-page) enter code in team.html file
+>         3617987 (origin/ft/bundle-2, ft/bundle-2) implement the services page
+>         26188b7 (origin/dev, dev) restore home and about pages
+>         a512875 (origin/main, main, ft/contact-page) project first commit
+```
+9. Checkout again `ft/contact-page` using git cherry-pick get the changes from the last commit on the `ft/team-page` branch.
+```
+user#     git checkout ft/contact-page
+
+>         Switched to branch 'ft/contact-page'
+
+user#     git cherry-pick 1884b87
+
+>         [ft/contact-page 4770a30] enter code in team.html file
+>          Date: Thu Dec 19 10:40:57 2024 +0200
+>          1 file changed, 5 insertions(+)
+>          create mode 100644 team.html
+```
+10. Add new changes for the contact page and commit, push them
+```
+user#     touch contacts.html
+
+user#     nano contacts.html        //make changes to the contacts.html page
+
+user#     cat contacts.html         //preview the contatcs.html page
+
+>         <html>
+>           <body>
+>             <p>This is the contact page</p>	
+>           </body>
+>         </html>
+
+user#     git add .
+
+user#     git commit -m "implement cvhangers on the contacts page"
+
+>         [ft/contact-page f993ebd] implement cvhangers on the contacts page
+>          1 file changed, 5 insertions(+)
+>          create mode 100644 contacts.html
+
+user#     git push -u origin ft/contact-page
+
+>         Enumerating objects: 7, done.
+>         Counting objects: 100% (7/7), done.
+>         Delta compression using up to 8 threads
+>         Compressing objects: 100% (6/6), done.
+>         Writing objects: 100% (6/6), 677 bytes | 677.00 KiB/s, done.
+>         Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+>         remote: Resolving deltas: 100% (1/1), done.
+>         remote: 
+>         remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+>         remote:      https://github.com/gisachris/git_project_one/pull/new/ft/contact-page
+>         remote: 
+>         To github.com:gisachris/git_project_one.git
+>          * [new branch]      ft/contact-page -> ft/contact-page
+>         branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+```
+
+11. Create a new PR for the contact page
+<br>
+<img src='./images/bundle_three_exercise_one_two.png' width='500'>
+<br>
+12. From the `ft/contact-page` branch create a new branch called `ft/faq-page`
+13. Create a new `faq.html` page and add some changes there
+```
+user#     git checkout -b ft/faq-page
+
+>         Switched to a new branch 'ft/faq-page'
+
+user#     touch faq.html
+
+user#     nano faq.html
+
+user#     cat faq.html
+
+>         <html>
+>          <body>
+>           <p>this is thew faq page</p>
+>          </body>
+>         </html>
+```
+14. Commit and push those changes
+```
+user#     git add faq.html
+
+user#     git commit -m "implement changes on the faq page"
+
+>         [ft/faq-page 07b64be] implement changes on the faq page
+>          1 file changed, 5 insertions(+)
+>          create mode 100644 faq.html
+
+user#     git push -u origin ft/faq-page
+
+>         Enumerating objects: 4, done.
+>         Counting objects: 100% (4/4), done.
+>         Delta compression using up to 8 threads
+>         Compressing objects: 100% (3/3), done.
+>         Writing objects: 100% (3/3), 349 bytes | 349.00 KiB/s, done.
+>         Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>         remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>         remote: 
+>         remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+>         remote:      https://github.com/gisachris/git_project_one/pull/new/ft/faq-page
+>         remote: 
+>         To github.com:gisachris/git_project_one.git
+>          * [new branch]      ft/faq-page -> ft/faq-page
+>         branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+```
+15. Using git revert, revert the changes of the last commit of the `ft/team-page` branch. (use the commit hash you copied earlier)
+```
+user#     git checkout ft/team-page
+
+>         Switched to branch 'ft/team-page'
+>         Your branch is up to date with 'origin/ft/team-page'.
+
+user#     git revert 1884b87
+
+>         [ft/team-page a3aa14b] Revert "enter code in team.html file"
+>          1 file changed, 5 deletions(-)
+>          delete mode 100644 team.html    
+```
+16. Push the changes and create a new PR
+<br>
+<img src='./images/bundle_three_exercise_one_three.png' width='500'>
+<br>
 
 <br>
 
@@ -349,5 +757,6 @@ user#   git push -u origin ft/bundle-2
 <br>
 
 ---
+
 
 
