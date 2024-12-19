@@ -11,6 +11,9 @@
 - [Bundle Two](#bundle-two)
   - [Exercise One](#exercise-one)
   - [Exercise Two](#exercise-two)
+- [Bundle Three](#bundle-three)
+  - [Exercise One](#exercise-one)
+  - [Exercise Two](#exercise-two)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -359,5 +362,36 @@ user#   git push -u origin ft/bundle-2
 <br>
 
 ---
+
+## Bundle Three
+### Exercise One
+> Below are the exercise Question criteria
+1. Create a new branch named `ft/team-page`
+2. Create a new html page named `team.html` and add some changes
+3. commit and push those changes
+4. Create a new PR for the changes
+5. Go back to `main` branch (checkout the `main` branch)
+6. Create new branch named `ft/contact-page`
+7. Go back to the `ft/team-page`
+8. With the help of git log look for the last commit and copy its hash
+9. Checkout again `ft/contact-page` using git cherry-pick get the changes from the last commit on the `ft/team-page` branch.
+10. Add new changes for the contact page and commit, push them
+11. Create a new PR for the contact page
+12. From the `ft/contact-page` branch create a new branch called `ft/faq-page`
+13. Create a new `faq.html` page and add some changes there
+14. Commit and push those changes
+15. Using git revert, revert the changes of the last commit of the `ft/team-page` branch. (use the commit hash you copied earlier)
+16. Push the changes and create a new PR
+
+<br>
+
+---
+### Exercise Two
+> Below are the exercise Question criteria
+
+<br>
+
+---
+
 
 
