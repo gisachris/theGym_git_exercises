@@ -303,7 +303,8 @@ user#   git checkout -b ft/bundle-2
 ```
 2. Add new changes to your project. create a new page named `services.html` and add some changes
 ```
-touch services.html
+user#       touch services.html
+
 user#       nano services.html          // make changes to the services.html page
 
 user#       cat services.html           //preview the changes
@@ -424,6 +425,100 @@ user#        git push -u origin ft/service-redesign
 <br>
 <img src='./images/bundle_two_exercise_two.png' width='500'>
 <br>
+6. go back to your `main` branch and add again new changes to your `service.html` page, you can add different changes but make sure to affect the same part(line of code) as you did in the other PR
+```
+user#       git switch main
+
+user#       nano services.html
+
+user#       cat services.html
+
+>           <html>
+>             <body>
+>               <p>this is the services page</p>
+>               <span>This is a slight change on the same line</span>
+>             </body>
+>           </html>
+
+```
+7. Commit and push those changes
+```
+user#       git add .
+
+user#       git commit -m "chasnged the same line on services.html page"
+
+>           [main e143925] chasnged the same line on services.html page
+>            1 file changed, 1 insertion(+)
+
+user#       git push
+
+>           Enumerating objects: 5, done.
+>           Counting objects: 100% (5/5), done.
+>           Delta compression using up to 8 threads
+>           Compressing objects: 100% (3/3), done.
+>           Writing objects: 100% (3/3), 385 bytes | 385.00 KiB/s, done.
+>           Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+>           remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+>           To github.com:gisachris/git_project_one.git
+>              99eab8c..e143925  main -> main
+ ```
+8. Now go back to the Github PR you had created for the `ft/service-redesign`branch, you will then see that you have conflicts with the `main` branch
+<br>
+<img src='./images/bundle_two_exercise_two_two.png' width='500'>
+<br>
+9. In your project checkout the `ft/service-redesign`branch
+```
+user#        git checkout ft/service-redesign
+
+>            Switched to branch 'ft/service-redesign'
+>            Your branch is up to date with 'origin/ft/service-redesign'.
+```
+10. Compare the `ft/service-redesign`with the `main` branch using git diff and observe the changes
+```
+user#        git diff main
+
+>            diff --git a/services.html b/services.html
+>            index 36ae9a3..189b85c 100644
+>            --- a/services.html
+>            +++ b/services.html
+>            @@ -1,6 +1,6 @@
+>             <html>
+>               <body>
+>                 <p>this is the services page</p>
+>            -    <span>This is a slight change on the same line</span>
+>            +    <p>This is the redesign of this page</p>
+>               </body>
+>             </html>
+```
+11. Using git merge, merge the `main` branch with `ft/service-redesign` branch and commit and push you changes again
+```
+>             git merge main
+
+>             Auto-merging services.html
+>             CONFLICT (content): Merge conflict in services.html
+>             Automatic merge failed; fix conflicts and then commit the result.
+
+user#         git checkout --ours .                 //this favours changes of the current branch in the conflict
+
+>             Updated 1 path from the index
+
+user#         git add .
+
+user#         git commit -m "fix comflict with services file"
+
+>             [ft/service-redesign c1b6a59] fix comflict with services file
+
+user#         git Push
+
+>             Enumerating objects: 1, done.
+>             Counting objects: 100% (1/1), done.
+>             Writing objects: 100% (1/1), 243 bytes | 243.00 KiB/s, done.
+>             Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+>             To github.com:gisachris/git_project_one.git
+>                0b13082..c1b6a59  ft/service-redesign -> ft/service-redesign
+```
+
+
 <br>
 
 ---
