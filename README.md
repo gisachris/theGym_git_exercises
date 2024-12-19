@@ -443,6 +443,79 @@ user#     git checkout main
 >         Switched to branch 'main'
 >         Your branch is up to date with 'origin/main'.
 ```
+6. Create new branch named `ft/contact-page`
+7. Go back to the `ft/team-page`
+```
+user#     git checkout -b ft/contact-page
+
+>         Switched to a new branch 'ft/contact-page'
+
+user#     git switch ft/team-page
+
+>         Switched to branch 'ft/team-page'
+>         Your branch is up to date with 'origin/ft/team-page'.
+```
+8. With the help of git log look for the last commit and copy its hash
+```
+user#     git log --oneline
+
+>         1884b87 (HEAD -> ft/team-page, origin/ft/team-page) enter code in team.html file
+>         3617987 (origin/ft/bundle-2, ft/bundle-2) implement the services page
+>         26188b7 (origin/dev, dev) restore home and about pages
+>         a512875 (origin/main, main, ft/contact-page) project first commit
+```
+9. Checkout again `ft/contact-page` using git cherry-pick get the changes from the last commit on the `ft/team-page` branch.
+```
+user#     git checkout ft/contact-page
+
+>         Switched to branch 'ft/contact-page'
+
+user#     git cherry-pick 1884b87
+
+>         [ft/contact-page 4770a30] enter code in team.html file
+>          Date: Thu Dec 19 10:40:57 2024 +0200
+>          1 file changed, 5 insertions(+)
+>          create mode 100644 team.html
+```
+10. Add new changes for the contact page and commit, push them
+```
+user#     touch contacts.html
+
+user#     nano contacts.html        //make changes to the contacts.html page
+
+user#     cat contacts.html         //preview the contatcs.html page
+
+>         <html>
+>           <body>
+>             <p>This is the contact page</p>	
+>           </body>
+>         </html>
+
+user#     git add .
+
+user#     git commit -m "implement cvhangers on the contacts page"
+
+>         [ft/contact-page f993ebd] implement cvhangers on the contacts page
+>          1 file changed, 5 insertions(+)
+>          create mode 100644 contacts.html
+
+user#     git push -u origin ft/contact-page
+
+>         Enumerating objects: 7, done.
+>         Counting objects: 100% (7/7), done.
+>         Delta compression using up to 8 threads
+>         Compressing objects: 100% (6/6), done.
+>         Writing objects: 100% (6/6), 677 bytes | 677.00 KiB/s, done.
+>         Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+>         remote: Resolving deltas: 100% (1/1), done.
+>         remote: 
+>         remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+>         remote:      https://github.com/gisachris/git_project_one/pull/new/ft/contact-page
+>         remote: 
+>         To github.com:gisachris/git_project_one.git
+>          * [new branch]      ft/contact-page -> ft/contact-page
+>         branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+```
 
 
 <br>
