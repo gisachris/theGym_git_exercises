@@ -8,6 +8,9 @@
 - [Bundle One](#bundle-one)
   - [Exercise One](#exercise-one)
   - [Exercise Two](#exercise-two)
+- [Bundle Two](#bundle-two)
+  - [Exercise One](#exercise-one)
+  - [Exercise Two](#exercise-two)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -279,5 +282,72 @@ user#   git stash pop stash@{0}
 ```
 user#   git reset --hard HEAD~1
 ```
+<br>
+
+---
+
+
+## Bundle Two
+### Exercise One
+> Below are the exercise Question criteria
+1. Create a new branch named `ft/bundle-2`
+2. Add new changes to your project. create a new page named `services.html` and add some changes
+3. Commit your changes and create a Pull Request against the `main` branch in your github repository
+4. Request a review and make sure your Pull request gets merged (Look for someone to merge your PR)
+
+1. Create a new branch named `ft/bundle-2`
+```
+user#   git checkout -b ft/bundle-2
+
+>       Switched to a new branch 'ft/bundle-2'
+```
+2. Add new changes to your project. create a new page named `services.html` and add some changes
+```
+touch services.html
+user#       nano services.html          // make changes to the services.html page
+
+user#       cat services.html           //preview the changes
+
+>           <html>
+>             <body>
+>               <p>this is the services page</p>
+>             </body>
+>           </html>
+```
+
+3. Commit your changes and create a Pull Request against the `main` branch in your github repository
+```
+user#       git add .
+
+user#       git commit -m "implement the services page"
+
+>           [ft/bundle-2 3617987] implement the services page
+>            1 file changed, 5 insertions(+)
+>            create mode 100644 services.html
+
+user#   git push -u origin ft/bundle-2
+
+>       Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+>       remote: 
+>       remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+>       remote:      https://github.com/gisachris/git_project_one/pull/new/ft/bundle-2
+>       remote: 
+>       To github.com:gisachris/git_project_one.git
+>        * [new branch]      ft/bundle-2 -> ft/bundle-2
+>       branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+```
+4. Request a review and make sure your Pull request gets merged (Look for someone to merge your PR)
+
+<img src='./images/bundle_two_exercise_one.png'>
+
+<br>
+
+---
+### Exercise Two
+> Below are the exercise Question criteria
+
+<br>
+
+---
 
 
