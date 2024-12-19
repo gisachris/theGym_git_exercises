@@ -17,7 +17,7 @@
 `>`: This will represent the Output of a given Command.
 
 ## Bundle One
-### Exercise One()
+### Exercise One
 > Below are the exercise Question criteria
 1. Create a project folder & initialize git
 2. Make changes to the project (add files and contents)
@@ -131,3 +131,153 @@ user# git branch
 >    * dev
      main
 ```
+<br>
+<br>
+
+---
+### Exercise Two
+1. Create a new `home.html` file, add some html changes and save them
+2. Stash save your current changes
+3. Repeat the same process for a new `about.html` page and stash save your changes
+4. Repeat the same process for a new `team.html` page and stash save your changes
+5. Using stash pop restore the changes of the `about.html` page
+6. With the help of an index use stash pop bring back the `home.html` page changes
+7. Commit the current changes and push them
+8. Using stash pop restore the changes of the `team.html` page index
+9. Reset the current changes using git reset and go back to the changes without the `team.html` page.
+
+> Below are the solution steps
+1. Create a new `home.html` file, add some html changes and save them.
+```
+user#   touch index.html
+
+user#   ls
+
+>       index.html
+
+user#   nano index.html     //make changes to the file
+
+user#   cat index.html      //preview the file
+
+ >      <html>
+ >      <head><head>
+ >      <body>
+ >          <p>This is some text</p>
+ >      </body>
+ >      </html>
+```
+
+2. Stash save your current changes
+```
+user#   git stash push -m "first_stash"
+
+>       Saved working directory and index state On dev: first_stash
+```
+3. Repeat the same process for a new `about.html` page and stash save your changes
+4. Repeat the same process for a new `team.html` page and stash save your changes
+```
+user#   touch about.html
+
+user#   nano about.html         //make changes to the about page
+
+user#   cat about.html          //preview the about page
+
+ >      <html>
+ >      <head><head>
+ >      <body>
+ >          <p>This is the about Page </p>
+ >      </body>
+ >      </html>
+
+user#   git stash push -u -m "second_stash"
+
+>       Saved working directory and index state On dev: second_stash
+
+user#   touch team.html
+
+user#   nano team.html          //make changes to the team page
+
+user#   cat team.html          //preview the team page
+
+ >      <html>
+ >      <head><head>
+ >      <body>
+ >          <p>This is the Team Page </p>
+ >      </body>
+ >      </html>
+
+user#   git stash push -u -m "third_stash"
+
+>       Saved working directory and index state On dev: third_stash
+```
+5. Using stash pop restore the changes of the `about.html` page
+```
+user#   git stash list         // list all the stashes
+
+>       stash@{0}: On dev: third_stash
+>       stash@{1}: On dev: second_stash
+>       stash@{2}: On dev: first_stash
+
+user#   git stash pop stash@{1}     //restore the stash with index in the {id}
+
+>       Already up to date.
+>       On branch dev
+>       Your branch is up to date with 'origin/dev'.
+>       Untracked files:
+>         (use "git add <file>..." to include in what will be committed)
+>       	about.html
+>       	index.html
+>       nothing added to commit but untracked files present (use "git add" to track)
+>       Dropped stash@{1} (bd011daf7ca8a11e9790d723ebac0e354fcc8903)
+```
+6. With the help of an `index` use `stash pop` bring back the `home.html` page changes
+```
+user#   git stash list
+
+>       stash@{0}: On dev: third_stash
+>       stash@{1}: On dev: second_stash
+>       stash@{2}: On dev: first_stash
+
+user#   git stash pop stash@{2}
+```
+7. Commit the current changes and push them
+```
+user#   git add .
+
+user#   git commit -m "restore home and about pages"
+
+>       [dev 26188b7] restore home and about pages
+>        2 files changed, 12 insertions(+)
+>        create mode 100644 about.html
+>        create mode 100644 index.html
+
+user#   git push -u origin dev
+
+>        Enumerating objects: 5, done.
+>        Counting objects: 100% (5/5), done.
+>        Delta compression using up to 8 threads
+>        Compressing objects: 100% (4/4), done.
+>        Writing objects: 100% (4/4), 471 bytes | 471.00 KiB/s, done.
+>        Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+>        To github.com:gisachris/git_project_one.git
+>           a512875..26188b7  dev -> dev
+>        branch 'dev' set up to track 'origin/dev'.
+```
+
+8. Using stash pop restore the changes of the `team.html` page index.
+```
+user#   git stash list
+
+>       stash@{0}: On dev: third_stash
+>       stash@{1}: On dev: second_stash
+>       stash@{2}: On dev: first_stash
+
+user#   git stash pop stash@{0}
+```
+
+9. Reset the current changes using `git reset` and go back to the changes without the `team.html` page.
+```
+user#   git reset --hard HEAD~1
+```
+
+
