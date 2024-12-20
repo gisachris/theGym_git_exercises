@@ -753,6 +753,13 @@ user#     git revert 1884b87
 ---
 ### Exercise Two
 > Below are the exercise Question criteria
+1. Create new branch from the `ft/faq-page` branch named `ft/home-page-redesign`
+2. Go back to the `main` branch and make some changes there
+3. Commit and push them
+4. go back to the `ft/home-page-redesign` branch
+5. Using git rebase, rebase your branch to `main`
+6. Add changes to the home page and commit push them
+7. Create a PR for the changes.
 
 <br>
 
