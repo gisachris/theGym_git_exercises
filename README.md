@@ -521,7 +521,6 @@ user#         git Push
 >                0b13082..c1b6a59  ft/service-redesign -> ft/service-redesign
 ```
 
-
 <br>
 
 ---
@@ -747,16 +746,7 @@ user#     git revert 1884b87
 <br>
 <img src='./images/bundle_three_exercise_one_three.png' width='500'>
 <br>
-
 <br>
-
----
-### Exercise Two
-> Below are the exercise Question criteria
-
-<br>
-
----
 
 
 
