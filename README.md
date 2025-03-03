@@ -770,4 +770,29 @@ Recover from An error where you have to forgot to add a file to the commit it be
 <br>
 <br>
 
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Enter the `Interactive` mode with `i`
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+3.Make the required change in this case `pick` to `reword` and also change the commit in the next pop up window.
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+4.exit the window and save by running `esc :wq`
+<img src="./images/part1_4.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
 
