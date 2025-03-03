@@ -796,3 +796,26 @@ Recover from An error where you have to forgot to add a file to the commit it be
 <br>
 
 
+#### <p style="text-decoration: underline">Keeping History Tidy - Squashing Commits:</p>
+<strong>Challenge:</strong>Let's merge "Create second file" into "Create initial file" for a cleaner history.Use interactive rebasing with the squash command to achieve this.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+
+2.Change all the commits we want to `squash` from `pick` to `squash`
+
+3.In the new Window optionally you can provide a `new commit` for the changes or use the last commit message.
+
+4.save changes with `esc :wq`
+<img src="./images/part1_7.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+5.If you check the log u can see the `create second file` commit has been squashed.
+<img src="./images/part1_8.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
