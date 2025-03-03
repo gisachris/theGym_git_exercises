@@ -750,5 +750,22 @@ user#     git revert 1884b87
 
 
 ## <div align='center'>ADVANCED GIT LEARNING</div>
-### <p style="text-decoration: underline">REFINING GIT HISTORY  (PART1)</p>
+### REFINING GIT HISTORY  (PART1)
+
+#### <p style="text-decoration: underline">Missing File Fix:</p>
+<strong>Challenge:</strong>
+Recover from An error where you have to forgot to add a file to the commit it belongs to by staging/adding test4.md and amending the commit message with an appropriate description.
+
+<br>
+<strong>Solution:</strong><br>
+1. Add the missing file to the staging area
+<img src="./images/part1_1.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Use `git commit --ammend -m <message>` to recommit to the previous commit and also change the commit message.
+<img src="./images/part1_2.png" style="border: 3px solid black">
+<br>
+<br>
+
 
