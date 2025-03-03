@@ -14,6 +14,8 @@
 - [Bundle Three](#bundle-three)
   - [Exercise One](#exercise-one)
   - [Exercise Two](#exercise-two)
+- [Advanced Git Learning](#advanced-git-learning)
+  - [Refining History: Part-1](#refining-git-history--part1)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
