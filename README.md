@@ -872,4 +872,24 @@ Recover from An error where you have to forgot to add a file to the commit it be
 <br>
 <br>
 
-4.
+4.Now `reset` All committed changes within that `commit` with the below command.
+```
+git reset HEAD~
+```
+<br>
+
+5.Now `re-add` and `re-commit` to your preferences
+<img src="./images/part1_12.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+6.Continue the Rebase till completion
+<img src="./images/part1_13.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+7.Check the commit logs to check if the change was succesful.
+<img src="./images/part1_14.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
