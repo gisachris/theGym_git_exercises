@@ -850,3 +850,26 @@ Recover from An error where you have to forgot to add a file to the commit it be
 <img src="./images/part1_8.png" style="border: 3px solid black; background-color: white;">
 <br>
 <br>
+
+#### <p style="text-decoration: underline">Splitting a Commit:</p>
+<strong>Challenge:</strong> Leverage git reset to separate the files into individual commits with distinct messages by Imagining "Create third and fourth files" describes too much at once. Separate them for better tracking with two different commit messages: "Create Third File" and "Create fourth file".
+
+<br>
+<strong>Solution:</strong><br>
+
+1.Start by getting the `commit hash` with `git reflog`.
+<img src="./images/part1_10.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Now enter the `interactive rebase` with the `previous commit hash` form the one you want to edit.
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+3.Change the `pick` of the commit you want to split to `edit`.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+4.
