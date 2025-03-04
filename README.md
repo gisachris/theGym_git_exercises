@@ -893,3 +893,33 @@ git reset HEAD~
 <br>
 <br>
 
+#### <p style="text-decoration: underline">Advanced Squashing</p>
+<strong>Challenge:</strong>Combine the last two commits ("Create third file" and "Create fourth file") into a single commit named "Create third and fourth files"
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.get the `parent commit` to the commits above.
+<img src="./images/part1_15.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2. start the `interactive rebase` with that commit.
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+3. change the `pick` of the commit to `squash`. NB:`not 'edit' but 'squash'`.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+4. Provide a new commit message, save and exit thew `interactive rebase`.
+<img src="./images/part1_16.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+5.Check to see if the changes have been implemented.
+<img src="./images/part1_17.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
