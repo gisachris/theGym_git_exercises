@@ -14,6 +14,8 @@
 - [Bundle Three](#bundle-three)
   - [Exercise One](#exercise-one)
   - [Exercise Two](#exercise-two)
+- [Advanced Git Learning](#advanced-git-learning)
+  - [Refining History: Part-1](#refining-git-history--part1)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -749,4 +751,125 @@ user#     git revert 1884b87
 <br>
 
 
+## <div align='center'>ADVANCED GIT LEARNING</div>
+### REFINING GIT HISTORY  (PART1)
 
+#### <p style="text-decoration: underline">Missing File Fix:</p>
+<strong>Challenge:</strong>
+Recover from An error where you have to forgot to add a file to the commit it belongs to by staging/adding test4.md and amending the commit message with an appropriate description.
+
+<br>
+<strong>Solution:</strong><br>
+1. Add the missing file to the staging area
+<img src="./images/part1_1.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Use `git commit --ammend -m <message>` to recommit to the previous commit and also change the commit message.
+<img src="./images/part1_2.png" style="border: 3px solid black">
+<br>
+<br>
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~2 || <commit>)
+
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Enter the `Interactive` mode with `i`
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+3.Make the required change in this case `pick` to `reword` and also change the commit in the next pop up window.
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+4.exit the window and save by running `esc :wq`
+<img src="./images/part1_4.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Enter the `Interactive` mode with `i`
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+3.Make the required change in this case `pick` to `reword` and also change the commit in the next pop up window.
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+4.exit the window and save by running `esc :wq`
+<img src="./images/part1_4.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+
+#### <p style="text-decoration: underline">Keeping History Tidy - Squashing Commits:</p>
+<strong>Challenge:</strong>Let's merge "Create second file" into "Create initial file" for a cleaner history.Use interactive rebasing with the squash command to achieve this.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+
+2.Change all the commits we want to `squash` from `pick` to `squash`
+
+3.In the new Window optionally you can provide a `new commit` for the changes or use the last commit message.
+
+4.save changes with `esc :wq`
+<img src="./images/part1_7.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+5.If you check the log u can see the `create second file` commit has been squashed.
+<img src="./images/part1_8.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Splitting a Commit:</p>
+<strong>Challenge:</strong> Leverage git reset to separate the files into individual commits with distinct messages by Imagining "Create third and fourth files" describes too much at once. Separate them for better tracking with two different commit messages: "Create Third File" and "Create fourth file".
+
+<br>
+<strong>Solution:</strong><br>
+
+1.Start by getting the `commit hash` with `git reflog`.
+<img src="./images/part1_10.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+2.Now enter the `interactive rebase` with the `previous commit hash` form the one you want to edit.
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+3.Change the `pick` of the commit you want to split to `edit`.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white;">
+<br>
+<br>
+
+4.
