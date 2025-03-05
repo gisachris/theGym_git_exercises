@@ -923,3 +923,37 @@ git reset HEAD~
 <img src="./images/part1_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 <br>
 <br>
+
+#### <p style="text-decoration: underline">Reordering Commits:</p>
+<strong>Observation:</strong><br>
+We can reorder commits by changing the order of the commits in the `interactive rebase` window.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Cherry-Picking Commits</p>
+<strong>Challenge:</strong>
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Get the `commit-hash` of the commit you want to add.
+<img src="./images/part1_22.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Take the `commit-hash` you wish to copy and return to your working branch and run the command `git chery-pick <commit-hash>`
+<img src="./images/part1_23.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Check to see if the changes have been implemented.
+<img src="./images/part1_22.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Visualizing Commit History (Bonus):</p>
+<strong>Observation:</strong><br>
+Tools like `git log --graph` or a `graphical Git client` can help visualize your `commit history`. Explore these tools for a clearer understanding of your workflow.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Using `git log --graph`.
+<img src="./images/part1_25.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
