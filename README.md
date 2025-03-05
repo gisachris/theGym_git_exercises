@@ -957,3 +957,17 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 <strong>Solution:</strong><br>
 1.Using `git log --graph`.
 <img src="./images/part1_25.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Understanding Reflogs (Bonus):</p>
+<strong>Observation:</strong><br>
+`Reflogs` compared to `logs` in git show the `local history` of a repository including any `commit amends`, `resetting` or other things done to the history of the repository. While `log` only shows the `standard commits` and `commit history` that everyone shares even when they `clone` the repository.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Using `git reflog`(`Local-History` specific to one user's work directory and changes to the repository).
+<img src="./images/part1_26.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+1.Using `git log`(history shared across all users with the repository).
+<img src="./images/part1_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
