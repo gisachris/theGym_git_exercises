@@ -1054,8 +1054,18 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 
 <strong>Solution:</strong><br>
 
-2.Find the `commit hash` of the branch you want to create a new commit from.
+1.Find the `commit hash` of the branch you want to create a new commit from.
 <img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
-1.Create the new branch `ft/new-branch-from-commit`
+2.Create the new branch `ft/new-branch-from-commit`
 <img src="./images/part2_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Branch Merging</p>
+<strong>Challenge:</strong><br>
+ Merge the `ft/new-branch-from-commit` branch into the `main` branch. Address any merge conflicts that might arise.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Run the `git merge <branch>` command to merge the `ft/new-branch-from-commit` branch into the `main` branch. Fix any merge conflicts that might occur.
+<img src="./images/part2_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
