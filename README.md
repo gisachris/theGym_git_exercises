@@ -990,3 +990,20 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 3.(optional) while you are on another branch you can use both `checkout` and `switch` to go back to our newly created branch.
 <img src="./images/part2_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
+#### <p style="text-decoration: underline">Working on the Feature Branch</p>
+<strong>Challenge:</strong><br>
+- Create a new file named feature.txt in this branch and add some content to it.
+- Commit these changes with a descriptive message like "Implemented core functionality for new feature".
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new file `feature.txt`.
+<img src="./images/part2_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Add some content to our file
+<img src="./images/part2_5.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Add and commit our changes with a meaningful commit message.
+<img src="./images/part2_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
