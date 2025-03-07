@@ -14,6 +14,9 @@
 - [Bundle Three](#bundle-three)
   - [Exercise One](#exercise-one)
   - [Exercise Two](#exercise-two)
+- [Advanced Git Learning](#advanced-git-learning)
+  - [Refining History: Part-1](#refining-git-history--part1)
+  - [Branching Basics: Part-2](#branching-basics--part2)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -749,4 +752,361 @@ user#     git revert 1884b87
 <br>
 
 
+## <div align='center'>ADVANCED GIT LEARNING</div>
+### REFINING GIT HISTORY  (PART1)
+
+#### <p style="text-decoration: underline">Missing File Fix:</p>
+<strong>Challenge:</strong>
+Recover from An error where you have to forgot to add a file to the commit it belongs to by staging/adding test4.md and amending the commit message with an appropriate description.
+
+<br>
+<strong>Solution:</strong><br>
+1. Add the missing file to the staging area
+<img src="./images/part1_1.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+2.Use `git commit --ammend -m <message>` to recommit to the previous commit and also change the commit message.
+<img src="./images/part1_2.png" style="border: 3px solid black; min-width: none; max-width: 50rem;">
+<br>
+<br>
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~2 || <commit>)
+
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+2.Enter the `Interactive` mode with `i`
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+3.Make the required change in this case `pick` to `reword` and also change the commit in the next pop up window.
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+4.exit the window and save by running `esc :wq`
+<img src="./images/part1_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Editing Commit History:</p>
+<strong>Challenge:</strong> Utilize interactive rebasing (git rebase -i HEAD~2) to edit the commit message and ensure clarity. Modify the message from `Create another file` to `Create second file`.
+
+<br>
+<strong>Solution:</strong><br>
+1. Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+2.Enter the `Interactive` mode with `i`
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+3.Make the required change in this case `pick` to `reword` and also change the commit in the next pop up window.
+<img src="./images/part1_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+4.exit the window and save by running `esc :wq`
+<img src="./images/part1_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+
+#### <p style="text-decoration: underline">Keeping History Tidy - Squashing Commits:</p>
+<strong>Challenge:</strong>Let's merge "Create second file" into "Create initial file" for a cleaner history.Use interactive rebasing with the squash command to achieve this.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Enter the interactive rebasing Window (git rebase -i HEAD~num | commit_hash)
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+
+2.Change all the commits we want to `squash` from `pick` to `squash`
+
+3.In the new Window optionally you can provide a `new commit` for the changes or use the last commit message.
+
+4.save changes with `esc :wq`
+<img src="./images/part1_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+5.If you check the log u can see the `create second file` commit has been squashed.
+<img src="./images/part1_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Splitting a Commit:</p>
+<strong>Challenge:</strong> Leverage git reset to separate the files into individual commits with distinct messages by Imagining "Create third and fourth files" describes too much at once. Separate them for better tracking with two different commit messages: "Create Third File" and "Create fourth file".
+
+<br>
+<strong>Solution:</strong><br>
+
+1.Start by getting the `commit hash` with `git reflog`.
+<img src="./images/part1_10.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+2.Now enter the `interactive rebase` with the `previous commit hash` form the one you want to edit.
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+3.Change the `pick` of the commit you want to split to `edit`.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+4.Now `reset` All committed changes within that `commit` with the below command.
+```
+git reset HEAD~
+```
+<br>
+
+5.Now `re-add` and `re-commit` to your preferences
+<img src="./images/part1_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+6.Continue the Rebase till completion
+<img src="./images/part1_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+7.Check the commit logs to check if the change was succesful.
+<img src="./images/part1_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Advanced Squashing</p>
+<strong>Challenge:</strong>Combine the last two commits ("Create third file" and "Create fourth file") into a single commit named "Create third and fourth files"
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.get the `parent commit` to the commits above.
+<img src="./images/part1_15.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+2.start the `interactive rebase` with that commit.
+<img src="./images/part1_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+3.change the `pick` of the commit to `squash`. NB:`not 'edit' but 'squash'`.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+4.Provide a new commit message, save and exit thew `interactive rebase`.
+<img src="./images/part1_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+5.Check to see if the changes have been implemented.
+<img src="./images/part1_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Reordering Commits:</p>
+<strong>Observation:</strong><br>
+We can reorder commits by changing the order of the commits in the `interactive rebase` window.
+<img src="./images/part1_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Cherry-Picking Commits</p>
+<strong>Challenge:</strong>
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Get the `commit-hash` of the commit you want to add.
+<img src="./images/part1_22.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Take the `commit-hash` you wish to copy and return to your working branch and run the command `git chery-pick <commit-hash>`
+<img src="./images/part1_23.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Check to see if the changes have been implemented.
+<img src="./images/part1_22.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<br>
+<br>
+
+#### <p style="text-decoration: underline">Visualizing Commit History (Bonus):</p>
+<strong>Observation:</strong><br>
+Tools like `git log --graph` or a `graphical Git client` can help visualize your `commit history`. Explore these tools for a clearer understanding of your workflow.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Using `git log --graph`.
+<img src="./images/part1_25.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Understanding Reflogs (Bonus):</p>
+<strong>Observation:</strong><br>
+`Reflogs` compared to `logs` in git show the `local history` of a repository including any `commit amends`, `resetting` or other things done to the history of the repository. While `log` only shows the `standard commits` and `commit history` that everyone shares even when they `clone` the repository.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Using `git reflog`(`Local-History` specific to one user's work directory and changes to the repository).
+<img src="./images/part1_26.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+1.Using `git log`(history shared across all users with the repository).
+<img src="./images/part1_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+### Branching Basics  (PART2)
+#### <p style="text-decoration: underline">Feature Branch Creation</p>
+<strong>Challenge:</strong><br>
+ Create a `new branch` named `ft/new-feature` and switch to that branch.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new branch `ft/new-feature`
+<img src="./images/part2_1.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check if the branch has been created succesfully
+<img src="./images/part2_2.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.(optional) while you are on another branch you can use both `checkout` and `switch` to go back to our newly created branch.
+<img src="./images/part2_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Working on the Feature Branch</p>
+<strong>Challenge:</strong><br>
+- Create a new file named feature.txt in this branch and add some content to it.
+- Commit these changes with a descriptive message like "Implemented core functionality for new feature".
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new file `feature.txt`.
+<img src="./images/part2_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Add some content to our file
+<img src="./images/part2_5.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Add and commit our changes with a meaningful commit message.
+<img src="./images/part2_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Switching Back and Making More Changes:</p>
+<strong>Challenge:</strong><br>
+ - Switch back to the main branch (previously master) and create a new file named readme.txt with some introductory content. Commit these changes with a message like "Updated project readme".
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new file `readme.txt`
+<img src="./images/part2_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Add and Commit the changes with a meaningful commit message. 
+<img src="./images/part2_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Local vs. Remote Branches</p>
+<strong>Challenge:</strong><br>
+ - Research the concept of remote branches, which are copies of your local branches stored on a Git hosting platform like GitHub. 
+ - Learn how to push your local branches to remote repositories and pull changes from them to keep your local and remote repositories in sync.
+<br>
+<br>
+
+<strong>Observation:</strong><br>
+`Remote branches` are the branches stored on hosting platforms like `github`. Our changes can be sent to this remote storage bucket through `pushing` mechanisms and we can pull the changes stored on this platform with `pulling` mechanisms.
+
+There are many nuances to these mechanisms but in the overall schema we can `push` new changes to our `remote hosts` or we can `pull` changes from our `remote hosts` that we currently dont have in our local branches.
+
+
+#### <p style="text-decoration: underline">Feature Branch Creation</p>
+<strong>Challenge:</strong><br>
+- Delete the `ft/new-feature` branch once you're confident the changes are integrated into main.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.After integrating the changes from `ft/new-feature` branch onto our main branch we can delete it with the `git branch -D <branch-name>` command.
+<img src="./images/part2_10.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check if the branch has been deleted succesfully
+<img src="./images/part2_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Creating a Branch from a Commit</p>
+<strong>Challenge:</strong><br>
+ Challenge: Use `git checkout -b ft/new-branch-from-commit commit-hash` to create a new branch named `ft/new-branch-from-commit` starting from the commit two positions back in your history.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Find the `commit hash` of the branch you want to create a new commit from.
+<img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Create the new branch `ft/new-branch-from-commit`
+<img src="./images/part2_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Branch Merging</p>
+<strong>Challenge:</strong><br>
+ Merge the `ft/new-branch-from-commit` branch into the `main` branch. Address any merge conflicts that might arise.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Run the `git merge <branch>` command to merge the `ft/new-branch-from-commit` branch into the `main` branch. Fix any merge conflicts that might occur.
+<img src="./images/part2_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Branch Rebasing</p>
+<strong>Challenge:</strong><br>
+ Try rebasing the ft/new-branch-from-commit branch onto the main branch. Remember, rebasing rewrites history, so use it with caution, especially in shared repositories.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Find the `base-commit-hash` you want to rebase main to. Then copy it.
+<img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Run the rebasing command `git rebase <commit-hash>` while in the `main-branch` to put all the changes in `ft/new-branch-commit` on top of the `main branch`.
+<img src="./images/part2_15.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Check to see if the changes have been implemented.
+<img src="./images/part2_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Renaming Branches</p>
+<strong>Challenge:</strong><br>
+ Use `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Run the `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
+<img src="./images/part2_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check to see if the changes have been implemented.
+<img src="./images/part2_18.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Checking Out Detached HEAD</p>
+
+<strong>Observation:</strong><br>
+```
+git checkout <commit-hash>
+```
+1. Git switches to the commit but does not move any branches.
+2. The HEAD pointer now directly references the commit instead of a branch.
+3. You enter a detached HEAD state.
+4. You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
 
