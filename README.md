@@ -1099,3 +1099,14 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 2.Check to see if the changes have been implemented.
 <img src="./images/part2_18.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
+#### <p style="text-decoration: underline">Checking Out Detached HEAD</p>
+
+<strong>Observation:</strong><br>
+```
+git checkout <commit-hash>
+```
+1. Git switches to the commit but does not move any branches.
+2. The HEAD pointer now directly references the commit instead of a branch.
+3. You enter a detached HEAD state.
+4. You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
+
