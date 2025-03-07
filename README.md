@@ -1086,3 +1086,16 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 3.Check to see if the changes have been implemented.
 <img src="./images/part2_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
+#### <p style="text-decoration: underline">Renaming Branches</p>
+<strong>Challenge:</strong><br>
+ Use `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Run the `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
+<img src="./images/part2_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check to see if the changes have been implemented.
+<img src="./images/part2_18.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
