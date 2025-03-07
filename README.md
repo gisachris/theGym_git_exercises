@@ -1045,3 +1045,17 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 
 2.Check if the branch has been deleted succesfully
 <img src="./images/part2_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Creating a Branch from a Commit</p>
+<strong>Challenge:</strong><br>
+ Challenge: Use `git checkout -b ft/new-branch-from-commit commit-hash` to create a new branch named `ft/new-branch-from-commit` starting from the commit two positions back in your history.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+
+2.Find the `commit hash` of the branch you want to create a new commit from.
+<img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+1.Create the new branch `ft/new-branch-from-commit`
+<img src="./images/part2_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
