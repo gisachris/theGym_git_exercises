@@ -1007,3 +1007,15 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 3.Add and commit our changes with a meaningful commit message.
 <img src="./images/part2_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
+#### <p style="text-decoration: underline">Switching Back and Making More Changes:</p>
+<strong>Challenge:</strong><br>
+ - Switch back to the main branch (previously master) and create a new file named readme.txt with some introductory content. Commit these changes with a message like "Updated project readme".
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new file `readme.txt`
+<img src="./images/part2_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Add and Commit the changes with a meaningful commit message. 
+<img src="./images/part2_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
