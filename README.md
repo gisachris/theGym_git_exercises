@@ -1019,3 +1019,15 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 
 2.Add and Commit the changes with a meaningful commit message. 
 <img src="./images/part2_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Local vs. Remote Branches</p>
+<strong>Challenge:</strong><br>
+ - Research the concept of remote branches, which are copies of your local branches stored on a Git hosting platform like GitHub. 
+ - Learn how to push your local branches to remote repositories and pull changes from them to keep your local and remote repositories in sync.
+<br>
+<br>
+
+<strong>Observation:</strong><br>
+`Remote branches` are the branches stored on hosting platforms like `github`. Our changes can be sent to this remote storage bucket through `pushing` mechanisms and we can pull the changes stored on this platform with `pulling` mechanisms.
+
+There are many nuances to these mechanisms but in the overall schema we can `push` new changes to our `remote hosts` or we can `pull` changes from our `remote hosts` that we currently dont have in our local branches.
