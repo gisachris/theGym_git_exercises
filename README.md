@@ -16,6 +16,7 @@
   - [Exercise Two](#exercise-two)
 - [Advanced Git Learning](#advanced-git-learning)
   - [Refining History: Part-1](#refining-git-history--part1)
+  - [Branching Basics: Part-2](#branching-basics--part2)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -970,4 +971,22 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 
 1.Using `git log`(history shared across all users with the repository).
 <img src="./images/part1_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+### Branching Basics  (PART2)
+#### <p style="text-decoration: underline">Feature Branch Creation</p>
+<strong>Challenge:</strong><br>
+ Create a `new branch` named `ft/new-feature` and switch to that branch.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new branch `ft/new-feature`
+<img src="./images/part2_1.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check if the branch has been created succesfully
+<img src="./images/part2_2.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.(optional) while you are on another branch you can use both `checkout` and `switch` to go back to our newly created branch.
+<img src="./images/part2_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
