@@ -1069,3 +1069,20 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 
 1.Run the `git merge <branch>` command to merge the `ft/new-branch-from-commit` branch into the `main` branch. Fix any merge conflicts that might occur.
 <img src="./images/part2_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Branch Rebasing</p>
+<strong>Challenge:</strong><br>
+ Try rebasing the ft/new-branch-from-commit branch onto the main branch. Remember, rebasing rewrites history, so use it with caution, especially in shared repositories.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Find the `base-commit-hash` you want to rebase main to. Then copy it.
+<img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Run the rebasing command `git rebase <commit-hash>` while in the `main-branch` to put all the changes in `ft/new-branch-commit` on top of the `main branch`.
+<img src="./images/part2_15.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Check to see if the changes have been implemented.
+<img src="./images/part2_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
