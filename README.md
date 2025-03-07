@@ -1031,3 +1031,17 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 `Remote branches` are the branches stored on hosting platforms like `github`. Our changes can be sent to this remote storage bucket through `pushing` mechanisms and we can pull the changes stored on this platform with `pulling` mechanisms.
 
 There are many nuances to these mechanisms but in the overall schema we can `push` new changes to our `remote hosts` or we can `pull` changes from our `remote hosts` that we currently dont have in our local branches.
+
+
+#### <p style="text-decoration: underline">Feature Branch Creation</p>
+<strong>Challenge:</strong><br>
+- Delete the `ft/new-feature` branch once you're confident the changes are integrated into main.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.After integrating the changes from `ft/new-feature` branch onto our main branch we can delete it with the `git branch -D <branch-name>` command.
+<img src="./images/part2_10.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check if the branch has been deleted succesfully
+<img src="./images/part2_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
