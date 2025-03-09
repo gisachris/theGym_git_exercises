@@ -17,6 +17,7 @@
 - [Advanced Git Learning](#advanced-git-learning)
   - [Refining History: Part-1](#refining-git-history--part1)
   - [Branching Basics: Part-2](#branching-basics--part2)
+  - [Advanced Workflows: Part-3](#advanced-workflows-part3)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -1105,8 +1106,18 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 ```
 git checkout <commit-hash>
 ```
-1. Git switches to the commit but does not move any branches.
-2. The HEAD pointer now directly references the commit instead of a branch.
-3. You enter a detached HEAD state.
-4. You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
+<br>
+1. Git switches to the commit but does not move any branches.<br>
+2.The HEAD pointer now directly references the commit instead of a branch.<br>
+3.You enter a detached HEAD state.<br>
+4.You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
 
+
+### Advanced Workflows (PART3)
+
+#### <p style="text-decoration: underline"></p>
+<strong>Challenge:</strong>
+
+
+<br>
+<strong>Solution:</strong><br>
