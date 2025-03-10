@@ -1158,3 +1158,24 @@ Simulate a merge conflict scenario (you can create conflicting changes in a file
 
 3.After solving the `merge conflicts` attempt to continue the merge.
 <img src="./images/part3_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+
+#### <p style="text-decoration: underline">Resolving Merge Conflicts with a Merge Tool</p>
+<strong>Challenge:</strong><br>
+Explore using a merge tool like `git mergetool` to help you visualize and resolve merge conflicts more efficiently.
+
+
+<br>
+<strong>Solution:</strong>
+<br>
+1.Use the `git mergetool` command to solve the merge conflicts in the command line after a `merge conflict` arises.
+<img src="./images/part3_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Fix all merge concerns.
+<img src="./images/part3_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Continue the merge process
+<img src="./images/part3_9.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
