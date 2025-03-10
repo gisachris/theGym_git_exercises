@@ -1128,3 +1128,15 @@ Stash your current changes in the main branch using git stash
 
 2.Use the `git stash list` command to view the list of all saved stashes.
 <img src="./images/part3_2.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Retrieving Stashed Changes</p>
+<strong>Challenge:</strong><br>
+Apply the most recent stash back onto the main branch using git stash pop.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Use the `git stash pop` command to retrieve saved changes.
+<img src="./images/part3_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
