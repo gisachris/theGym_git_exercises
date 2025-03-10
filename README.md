@@ -1140,3 +1140,21 @@ Apply the most recent stash back onto the main branch using git stash pop.
 
 1.Use the `git stash pop` command to retrieve saved changes.
 <img src="./images/part3_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Branch Merging Conflicts (Continued)</p>
+<strong>Challenge:</strong><br>
+Simulate a merge conflict scenario (you can create conflicting changes in a file on both main and a new feature branch). Then, try merging again and resolve the conflicts manually using your text editor.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Attempt Merging Changes from another branch.
+<img src="./images/part3_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.when you meet a Conflict Attempt solving it in the editor.
+<img src="./images/part3_5.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.After solving the `merge conflicts` attempt to continue the merge.
+<img src="./images/part3_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
