@@ -1115,9 +1115,16 @@ git checkout <commit-hash>
 
 ### Advanced Workflows (PART3)
 
-#### <p style="text-decoration: underline"></p>
-<strong>Challenge:</strong>
-
+#### <p style="text-decoration: underline">Stashing Changes</p>
+<strong>Challenge:</strong><br>
+Stash your current changes in the main branch using git stash
 
 <br>
-<strong>Solution:</strong><br>
+<strong>Solution:</strong>
+<br>
+
+1.Use the `git stash` command to temporarily save your changes
+<img src="./images/part3_1.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Use the `git stash list` command to view the list of all saved stashes.
+<img src="./images/part3_2.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
