@@ -1169,6 +1169,7 @@ Explore using a merge tool like `git mergetool` to help you visualize and resolv
 <br>
 <strong>Solution:</strong>
 <br>
+
 1.Use the `git mergetool` command to solve the merge conflicts in the command line after a `merge conflict` arises.
 <img src="./images/part3_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
@@ -1206,6 +1207,20 @@ Add a pattern like `/tmp` to your `.gitignore` file to exclude all temporary fil
 
 1.The `.gitignore file` can be used to remove/not-track a file or folder in a repository. Al a person has to do is create the file. then add the names of either the file or folder and then save the file.
 
-2.Once a file has already been tracked, One can remove it from the tracked files by using the `git rm --cached FILENAME`
+2.Once a file has already been tracked, One can remove it from the tracked files by using the `git rm --cached FILENAME`.
+
+
+#### <p style="text-decoration: underline">Working with Tags</p>
+<strong>Challenge:</strong><br>
+Use `git tag v1.0` to create a tag named `v1.0` on the `current commit` in your main branch.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Create a `git tag` to create a release point with an `anotated tag`.
+<img src="./images/part3_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Also a `light-weighted tag` can also be created to preserve or mark a keypoint in development.
 
 
