@@ -1223,4 +1223,21 @@ Use `git tag v1.0` to create a tag named `v1.0` on the `current commit` in your 
 
 2.Also a `light-weighted tag` can also be created to preserve or mark a keypoint in development.
 
+#### <p style="text-decoration: underline">Working with Tags</p>
+<strong>Challenge:</strong><br>
+Use `git tag` to list all existing tags. Then, use `git tag -d <tag-name>` to delete a specific tag (replace <tag-name> with the actual tag you want to remove).
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Listing all Tags can be done by running the `git tag` command.
+<img src="./images/part3_10.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Deleting a `Tag` can also be done using the `git tag -d <tag-name>`.
+<img src="./images/part3_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+All other also important `git tag` commands can be found here: [git tags](https://www.tpointtech.com/git-tags).
+
+
 
