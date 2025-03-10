@@ -1195,3 +1195,17 @@ Explore using a merge tool like `git mergetool` to help you visualize and resolv
 3.With the help of `git checkout -b <branch name>` command can help you bring the changes you have made to another new branch to continue editing them.
 
 
+#### <p style="text-decoration: underline">Ignoring Files/Directories</p>
+<strong>Challenge:</strong><br>
+Add a pattern like `/tmp` to your `.gitignore` file to exclude all temporary files and directories from version control.
+
+
+<br>
+<strong>Observation</strong>
+<br>
+
+1.The `.gitignore file` can be used to remove/not-track a file or folder in a repository. Al a person has to do is create the file. then add the names of either the file or folder and then save the file.
+
+2.Once a file has already been tracked, One can remove it from the tracked files by using the `git rm --cached FILENAME`
+
+
