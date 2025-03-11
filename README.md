@@ -1260,5 +1260,13 @@ Navigate to Github and make some changes inside your `README file` that you crea
 <strong>Solution:</strong>
 <br>
 
+1.Pull the Changes from `remote`.
+<img src="./images/part3_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Fix any merge conflicts.
+<img src="./images/part3_18.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<img src="./images/part3_19.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+1.Continue the merge process once done.
+<img src="./images/part3_20.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
 
 
