@@ -1240,4 +1240,25 @@ Use `git tag` to list all existing tags. Then, use `git tag -d <tag-name>` to de
 All other also important `git tag` commands can be found here: [git tags](https://www.tpointtech.com/git-tags).
 
 
+#### <p style="text-decoration: underline">Pushing Local Work to Remote Repositories</p>
+<strong>Challenge:</strong><br>
+Assuming you've set up a remote repository on a Git hosting platform (like GitHub), push the changes with the actual branch you want to push to push your local branch to the remote repository.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Push the `ft/chn-branch` to remote.
+<img src="./images/part3_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Pulling Changes from Remote Repositories</p>
+<strong>Challenge:</strong><br>
+Navigate to Github and make some changes inside your `README file` that you created on your main branch and in your local environment use `git pull origin <branch-name>` to fetch changes from the remote repository's main branch and merge them into your local main branch. Address any merge conflicts that might arise.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+
 
