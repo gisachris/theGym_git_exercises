@@ -16,6 +16,7 @@
   - [Exercise Two](#exercise-two)
 - [Advanced Git Learning](#advanced-git-learning)
   - [Refining History: Part-1](#refining-git-history--part1)
+  - [Branching Basics: Part-2](#branching-basics--part2)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -970,4 +971,142 @@ Tools like `git log --graph` or a `graphical Git client` can help visualize your
 
 1.Using `git log`(history shared across all users with the repository).
 <img src="./images/part1_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+### Branching Basics  (PART2)
+#### <p style="text-decoration: underline">Feature Branch Creation</p>
+<strong>Challenge:</strong><br>
+ Create a `new branch` named `ft/new-feature` and switch to that branch.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new branch `ft/new-feature`
+<img src="./images/part2_1.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check if the branch has been created succesfully
+<img src="./images/part2_2.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.(optional) while you are on another branch you can use both `checkout` and `switch` to go back to our newly created branch.
+<img src="./images/part2_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Working on the Feature Branch</p>
+<strong>Challenge:</strong><br>
+- Create a new file named feature.txt in this branch and add some content to it.
+- Commit these changes with a descriptive message like "Implemented core functionality for new feature".
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new file `feature.txt`.
+<img src="./images/part2_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Add some content to our file
+<img src="./images/part2_5.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Add and commit our changes with a meaningful commit message.
+<img src="./images/part2_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Switching Back and Making More Changes:</p>
+<strong>Challenge:</strong><br>
+ - Switch back to the main branch (previously master) and create a new file named readme.txt with some introductory content. Commit these changes with a message like "Updated project readme".
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.Create the new file `readme.txt`
+<img src="./images/part2_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Add and Commit the changes with a meaningful commit message. 
+<img src="./images/part2_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Local vs. Remote Branches</p>
+<strong>Challenge:</strong><br>
+ - Research the concept of remote branches, which are copies of your local branches stored on a Git hosting platform like GitHub. 
+ - Learn how to push your local branches to remote repositories and pull changes from them to keep your local and remote repositories in sync.
+<br>
+<br>
+
+<strong>Observation:</strong><br>
+`Remote branches` are the branches stored on hosting platforms like `github`. Our changes can be sent to this remote storage bucket through `pushing` mechanisms and we can pull the changes stored on this platform with `pulling` mechanisms.
+
+There are many nuances to these mechanisms but in the overall schema we can `push` new changes to our `remote hosts` or we can `pull` changes from our `remote hosts` that we currently dont have in our local branches.
+
+
+#### <p style="text-decoration: underline">Feature Branch Creation</p>
+<strong>Challenge:</strong><br>
+- Delete the `ft/new-feature` branch once you're confident the changes are integrated into main.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+1.After integrating the changes from `ft/new-feature` branch onto our main branch we can delete it with the `git branch -D <branch-name>` command.
+<img src="./images/part2_10.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check if the branch has been deleted succesfully
+<img src="./images/part2_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Creating a Branch from a Commit</p>
+<strong>Challenge:</strong><br>
+ Challenge: Use `git checkout -b ft/new-branch-from-commit commit-hash` to create a new branch named `ft/new-branch-from-commit` starting from the commit two positions back in your history.
+<br>
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Find the `commit hash` of the branch you want to create a new commit from.
+<img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Create the new branch `ft/new-branch-from-commit`
+<img src="./images/part2_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Branch Merging</p>
+<strong>Challenge:</strong><br>
+ Merge the `ft/new-branch-from-commit` branch into the `main` branch. Address any merge conflicts that might arise.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Run the `git merge <branch>` command to merge the `ft/new-branch-from-commit` branch into the `main` branch. Fix any merge conflicts that might occur.
+<img src="./images/part2_14.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Branch Rebasing</p>
+<strong>Challenge:</strong><br>
+ Try rebasing the ft/new-branch-from-commit branch onto the main branch. Remember, rebasing rewrites history, so use it with caution, especially in shared repositories.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Find the `base-commit-hash` you want to rebase main to. Then copy it.
+<img src="./images/part2_12.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Run the rebasing command `git rebase <commit-hash>` while in the `main-branch` to put all the changes in `ft/new-branch-commit` on top of the `main branch`.
+<img src="./images/part2_15.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Check to see if the changes have been implemented.
+<img src="./images/part2_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Renaming Branches</p>
+<strong>Challenge:</strong><br>
+ Use `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
+<br>
+
+<strong>Solution:</strong><br>
+
+1.Run the `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
+<img src="./images/part2_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Check to see if the changes have been implemented.
+<img src="./images/part2_18.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+#### <p style="text-decoration: underline">Checking Out Detached HEAD</p>
+
+<strong>Observation:</strong><br>
+```
+git checkout <commit-hash>
+```
+1. Git switches to the commit but does not move any branches.
+2. The HEAD pointer now directly references the commit instead of a branch.
+3. You enter a detached HEAD state.
+4. You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
 
