@@ -17,6 +17,7 @@
 - [Advanced Git Learning](#advanced-git-learning)
   - [Refining History: Part-1](#refining-git-history--part1)
   - [Branching Basics: Part-2](#branching-basics--part2)
+  - [Advanced Workflows: Part-3](#advanced-workflows-part3)
 
 ## Document Schematic
 > Below are some of the keyWords and interpretations of the code written below.
@@ -1105,8 +1106,167 @@ There are many nuances to these mechanisms but in the overall schema we can `pus
 ```
 git checkout <commit-hash>
 ```
-1. Git switches to the commit but does not move any branches.
-2. The HEAD pointer now directly references the commit instead of a branch.
-3. You enter a detached HEAD state.
-4. You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
+<br>
+1. Git switches to the commit but does not move any branches.<br>
+2.The HEAD pointer now directly references the commit instead of a branch.<br>
+3.You enter a detached HEAD state.<br>
+4.You can view, modify, or even commit changes, but they are not attached to any branch unless you create one.
+
+
+### Advanced Workflows (PART3)
+
+#### <p style="text-decoration: underline">Stashing Changes</p>
+<strong>Challenge:</strong><br>
+Stash your current changes in the main branch using git stash
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Use the `git stash` command to temporarily save your changes
+<img src="./images/part3_1.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Use the `git stash list` command to view the list of all saved stashes.
+<img src="./images/part3_2.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Retrieving Stashed Changes</p>
+<strong>Challenge:</strong><br>
+Apply the most recent stash back onto the main branch using git stash pop.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Use the `git stash pop` command to retrieve saved changes.
+<img src="./images/part3_3.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Branch Merging Conflicts (Continued)</p>
+<strong>Challenge:</strong><br>
+Simulate a merge conflict scenario (you can create conflicting changes in a file on both main and a new feature branch). Then, try merging again and resolve the conflicts manually using your text editor.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Attempt Merging Changes from another branch.
+<img src="./images/part3_4.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.when you meet a Conflict Attempt solving it in the editor.
+<img src="./images/part3_5.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.After solving the `merge conflicts` attempt to continue the merge.
+<img src="./images/part3_6.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+
+#### <p style="text-decoration: underline">Resolving Merge Conflicts with a Merge Tool</p>
+<strong>Challenge:</strong><br>
+Explore using a merge tool like `git mergetool` to help you visualize and resolve merge conflicts more efficiently.
+
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Use the `git mergetool` command to solve the merge conflicts in the command line after a `merge conflict` arises.
+<img src="./images/part3_7.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Fix all merge concerns.
+<img src="./images/part3_8.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+3.Continue the merge process
+<img src="./images/part3_9.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Understanding Detached HEAD State</p>
+<strong>Challenge:</strong><br>
+`Detached HEAD` refers to a state where your working directory is not associated with any specific branch. Research the implications and how to recover from this state using commands like git checkout <branch-name>.
+
+
+<br>
+<strong>Observation</strong>
+<br>
+
+1.The `detached HEAD` state allows for a user to do a prethra of activities to a commit or work separate from a specific branch like: `making changes`,`viewin old works` and more.
+
+2.The one outlier of a difference is is u dont save these changes with acommit once you do return to `HEAD state` then you loose all changes.
+
+3.With the help of `git checkout -b <branch name>` command can help you bring the changes you have made to another new branch to continue editing them.
+
+
+#### <p style="text-decoration: underline">Ignoring Files/Directories</p>
+<strong>Challenge:</strong><br>
+Add a pattern like `/tmp` to your `.gitignore` file to exclude all temporary files and directories from version control.
+
+
+<br>
+<strong>Observation</strong>
+<br>
+
+1.The `.gitignore file` can be used to remove/not-track a file or folder in a repository. Al a person has to do is create the file. then add the names of either the file or folder and then save the file.
+
+2.Once a file has already been tracked, One can remove it from the tracked files by using the `git rm --cached FILENAME`.
+
+
+#### <p style="text-decoration: underline">Working with Tags</p>
+<strong>Challenge:</strong><br>
+Use `git tag v1.0` to create a tag named `v1.0` on the `current commit` in your main branch.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Create a `git tag` to create a release point with an `anotated tag`.
+<img src="./images/part3_11.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Also a `light-weighted tag` can also be created to preserve or mark a keypoint in development.
+
+#### <p style="text-decoration: underline">Working with Tags</p>
+<strong>Challenge:</strong><br>
+Use `git tag` to list all existing tags. Then, use `git tag -d <tag-name>` to delete a specific tag (replace <tag-name> with the actual tag you want to remove).
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Listing all Tags can be done by running the `git tag` command.
+<img src="./images/part3_10.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Deleting a `Tag` can also be done using the `git tag -d <tag-name>`.
+<img src="./images/part3_13.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+All other also important `git tag` commands can be found here: [git tags](https://www.tpointtech.com/git-tags).
+
+
+#### <p style="text-decoration: underline">Pushing Local Work to Remote Repositories</p>
+<strong>Challenge:</strong><br>
+Assuming you've set up a remote repository on a Git hosting platform (like GitHub), push the changes with the actual branch you want to push to push your local branch to the remote repository.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Push the `ft/chn-branch` to remote.
+<img src="./images/part3_16.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+
+#### <p style="text-decoration: underline">Pulling Changes from Remote Repositories</p>
+<strong>Challenge:</strong><br>
+Navigate to Github and make some changes inside your `README file` that you created on your main branch and in your local environment use `git pull origin <branch-name>` to fetch changes from the remote repository's main branch and merge them into your local main branch. Address any merge conflicts that might arise.
+
+<br>
+<strong>Solution:</strong>
+<br>
+
+1.Pull the Changes from `remote`.
+<img src="./images/part3_17.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
+2.Fix any merge conflicts.
+<img src="./images/part3_18.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+<img src="./images/part3_19.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+1.Continue the merge process once done.
+<img src="./images/part3_20.png" style="border: 3px solid black; background-color: white; min-width: none; max-width: 50rem;">
+
 
